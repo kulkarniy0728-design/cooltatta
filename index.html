@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>A little surprise for you ❤️</title>
+
+
+<style>
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: #fff4d6;
+    font-family: Arial, sans-serif;
+}
+
+
+/* yellow box */
+
+#gameBox {
+
+    position: absolute;
+    width: 260px;
+    height: 190px;
+
+    background: #ffd84d;
+
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 25px #ffcc00;
+
+}
+
+
+
+h2 {
+
+    color: #6b4b00;
+    margin-bottom: 20px;
+
+}
+
+
+
+button {
+
+    width: 100px;
+    height: 45px;
+
+    border: none;
+    border-radius: 20px;
+
+    color: white;
+    font-size: 17px;
+
+    cursor: pointer;
+
+    margin: 5px;
+
+}
+
+
+
+#kiss {
+
+    background: #39d353;
+
+}
+
+
+
+#slap {
+
+    background: #ff4d4d;
+
+}
+
+
+
+/* final message */
+
+
+#love {
+
+    display: none;
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+}
+
+
+
+.flowerHeart {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+
+
+.flower {
+
+    font-size: 90px;
+
+    animation: float 2s infinite;
+
+}
+
+
+
+.heart {
+
+    font-size: 140px;
+
+    animation: beat 1s infinite;
+
+}
+
+
+
+#loveText {
+
+    margin-top: 25px;
+
+    max-width: 750px;
+
+    font-size: 25px;
+
+    line-height: 1.5;
+
+    color: #ff3366;
+
+    font-weight: bold;
+
+}
+
+
+
+/* animations */
+
+
+@keyframes beat {
+
+    0% {
+
+        transform: scale(1);
+
+    }
+
+
+    50% {
+
+        transform: scale(1.2);
+
+    }
+
+
+    100% {
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+
+@keyframes float {
+
+
+    0% {
+
+        transform: translateY(0px);
+
+    }
+
+
+    50% {
+
+        transform: translateY(-15px);
+
+    }
+
+
+    100% {
+
+        transform: translateY(0px);
+
+    }
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<!-- game box -->
+
+
+<div id="gameBox">
+
+
+    <h2>WHAT U GONE DO TO YASH KULKARNI 😳</h2>
+
+
+    <div>
+
+
+        <button id="kiss">
+            Kiss 💋
+        </button>
+
+
+        <button id="slap">
+            Slap 👋
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<!-- final surprise -->
+
+
+<div id="love">
+
+
+
+    <div class="flowerHeart">
+
+
+        <div class="flower">
+            🌸
+        </div>
+
+
+
+        <div class="heart">
+            ❤️
+        </div>
+
+
+
+        <div class="flower">
+            🌸
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+    <div id="loveText">
+
+
+        I know I haven't gotten u flowers in a while, but u really mean the entire world to me.
+
+        <br><br>
+
+        You're the most precious, beautiful, and stunning woman ever, and I wanna put my all into you and into this relationship.
+
+        <br><br>
+
+        I'm sorry I took mad time to call, but I really missed you today n I want you to know that I will always always always want you no matter what.
+
+        <br><br>
+        I don't want you to ever feel as if I'll just stop putting in effort to make you feel special, because you really are special to me.
+
+        <br><br>
+        Nothing beats seeing you in person and giving you flowers, but I hope you like it.
+
+        <br><br>
+        I CANT WAIT TO SEE YOU SOON
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+
+const box = document.getElementById("gameBox");
+
+const kiss = document.getElementById("kiss");
+
+const slap = document.getElementById("slap");
+
+const love = document.getElementById("love");
+
+
+
+
+
+function moveBox(){
+
+
+    let maxX = window.innerWidth - 260;
+
+    let maxY = window.innerHeight - 190;
+
+
+
+    let x = Math.random() * maxX;
+
+    let y = Math.random() * maxY;
+
+
+
+    box.style.left = x + "px";
+
+    box.style.top = y + "px";
+
+
+}
+
+
+
+
+
+
+// red button moves away 😈
+
+slap.onclick = function(){
+
+
+    moveBox();
+
+
+};
+
+
+
+
+
+
+// green button wins ❤️
+
+kiss.onclick = function(){
+
+
+    box.style.display = "none";
+
+
+    love.style.display = "flex";
+
+
+};
+
+
+
+
+
+moveBox();
+
+
+
+</script>
+
+
+
+
+</body>
+
+
+</html>
