@@ -3,121 +3,198 @@
 
 <head>
 
-<title>A little surprise for you ❤️</title>
-
+<title>Open When ❤️</title>
 
 <style>
 
 body {
-    margin: 0;
-    height: 100vh;
-    overflow: hidden;
-    background: #fff4d6;
-    font-family: Arial, sans-serif;
+margin:0;
+height:100vh;
+overflow:hidden;
+background:#ffd6e7;
+font-family:Arial, sans-serif;
 }
 
 
-/* yellow box */
+body::before {
 
-#gameBox {
+content:"🌸 🌺 🌸 🌺 🌸 🌺 🌸 🌺 🌸 🌺 🌸 🌺";
 
-    position: absolute;
-    width: 260px;
-    height: 190px;
+position:absolute;
 
-    background: #ffd84d;
+width:100%;
+height:100%;
 
-    border-radius: 25px;
+font-size:45px;
+line-height:120px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+opacity:0.35;
 
-    box-shadow: 0 0 25px #ffcc00;
-
-}
-
-
-
-h2 {
-
-    color: #6b4b00;
-    margin-bottom: 20px;
+z-index:-1;
 
 }
 
 
 
-button {
 
-    width: 100px;
-    height: 45px;
+#home {
 
-    border: none;
-    border-radius: 20px;
+width:100%;
+height:100%;
 
-    color: white;
-    font-size: 17px;
-
-    cursor: pointer;
-
-    margin: 5px;
+position:relative;
 
 }
 
 
 
-#kiss {
-
-    background: #39d353;
-
-}
 
 
+.envelope {
 
-#slap {
+position:absolute;
 
-    background: #ff4d4d;
+width:280px;
+height:220px;
 
-}
+background:#fff0f5;
 
+border-radius:30px;
 
+box-shadow:0 12px 30px #ff7aa2;
 
-/* final message */
+display:flex;
 
+justify-content:center;
+align-items:center;
 
-#love {
+flex-direction:column;
 
-    display: none;
+cursor:pointer;
 
-    position: absolute;
-
-    width: 100%;
-    height: 100%;
-
-    justify-content: center;
-    align-items: center;
-
-    flex-direction: column;
-
-    text-align: center;
-
-    padding: 20px;
-
-    box-sizing: border-box;
+transition:.3s;
 
 }
 
 
 
-.flowerHeart {
+.envelope:hover {
 
-    display: flex;
+transform:scale(1.1);
 
-    align-items: center;
+}
 
-    gap: 30px;
+
+
+.emoji {
+
+font-size:100px;
+
+}
+
+
+
+.label {
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#d10045;
+
+text-align:center;
+
+padding:10px;
+
+}
+
+
+
+
+
+#sad {
+
+top:25px;
+left:25px;
+
+}
+
+
+
+#happy {
+
+top:25px;
+right:25px;
+
+}
+
+
+
+#missing {
+
+bottom:25px;
+left:25px;
+
+}
+
+
+
+#sleep {
+
+bottom:25px;
+right:25px;
+
+}
+
+
+
+#june {
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+}
+
+
+
+
+
+
+
+#letter {
+
+display:none;
+
+height:100%;
+width:100%;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+text-align:center;
+
+padding:30px;
+
+box-sizing:border-box;
+
+}
+
+
+
+
+
+.heartBox {
+
+display:flex;
+
+align-items:center;
+
+gap:25px;
 
 }
 
@@ -125,9 +202,9 @@ button {
 
 .flower {
 
-    font-size: 90px;
+font-size:70px;
 
-    animation: float 2s infinite;
+animation:float 2s infinite;
 
 }
 
@@ -135,56 +212,84 @@ button {
 
 .heart {
 
-    font-size: 140px;
+font-size:160px;
 
-    animation: beat 1s infinite;
-
-}
-
-
-
-#loveText {
-
-    margin-top: 25px;
-
-    max-width: 750px;
-
-    font-size: 25px;
-
-    line-height: 1.5;
-
-    color: #ff3366;
-
-    font-weight: bold;
+animation:pulse 1s infinite;
 
 }
 
 
 
-/* animations */
+
+#message {
+
+max-width:900px;
+
+max-height:55vh;
+
+overflow-y:auto;
+
+font-size:22px;
+
+line-height:1.6;
+
+font-weight:bold;
+
+color:#b0003a;
+
+padding:15px;
+
+}
 
 
-@keyframes beat {
 
-    0% {
+.juneText {
 
-        transform: scale(1);
+font-size:55px !important;
 
-    }
-
-
-    50% {
-
-        transform: scale(1.2);
-
-    }
+}
 
 
-    100% {
 
-        transform: scale(1);
 
-    }
+
+button {
+
+margin-top:25px;
+
+padding:15px 40px;
+
+border:none;
+
+border-radius:30px;
+
+background:#ff477e;
+
+color:white;
+
+font-size:22px;
+
+cursor:pointer;
+
+}
+
+
+
+
+
+@keyframes pulse {
+
+0% {
+transform:scale(1);
+}
+
+50% {
+transform:scale(1.25);
+}
+
+100% {
+transform:scale(1);
+}
 
 }
 
@@ -192,36 +297,25 @@ button {
 
 @keyframes float {
 
+0% {
+transform:translateY(0);
+}
 
-    0% {
+50% {
+transform:translateY(-15px);
+}
 
-        transform: translateY(0px);
-
-    }
-
-
-    50% {
-
-        transform: translateY(-15px);
-
-    }
-
-
-    100% {
-
-        transform: translateY(0px);
-
-    }
-
+100% {
+transform:translateY(0);
+}
 
 }
 
 
-
 </style>
 
-
 </head>
+
 
 
 
@@ -229,29 +323,88 @@ button {
 
 
 
-<!-- game box -->
+<audio id="music" loop>
+
+<source src="tujhmeinrab.mp3" type="audio/mp3">
+
+</audio>
 
 
-<div id="gameBox">
 
 
-    <h2>WHAT U GONE DO TO YASH KULKARNI 😳</h2>
 
 
-    <div>
+<div id="home">
 
 
-        <button id="kiss">
-            Kiss 💋
-        </button>
+
+<div class="envelope" onclick="openLetter('sad')" id="sad">
+
+<div class="emoji">💌</div>
+
+<div class="label">
+Open when you're sad
+</div>
+
+</div>
 
 
-        <button id="slap">
-            Slap 👋
-        </button>
 
 
-    </div>
+
+<div class="envelope" onclick="openLetter('happy')" id="happy">
+
+<div class="emoji">💌</div>
+
+<div class="label">
+Open when you're happy
+</div>
+
+</div>
+
+
+
+
+
+<div class="envelope" onclick="openLetter('missing')" id="missing">
+
+<div class="emoji">💌</div>
+
+<div class="label">
+Open when you're missing me
+</div>
+
+</div>
+
+
+
+
+
+<div class="envelope" onclick="openLetter('sleep')" id="sleep">
+
+<div class="emoji">💌</div>
+
+<div class="label">
+Open when you can't sleep
+</div>
+
+</div>
+
+
+
+
+
+<div class="envelope" onclick="openLetter('june')" id="june">
+
+<div class="emoji">💌</div>
+
+<div class="label">
+Open June 27th ❤️
+</div>
+
+</div>
+
+
 
 
 </div>
@@ -260,67 +413,50 @@ button {
 
 
 
-<!-- final surprise -->
-
-
-<div id="love">
-
-
-
-    <div class="flowerHeart">
-
-
-        <div class="flower">
-            🌸
-        </div>
-
-
-
-        <div class="heart">
-            ❤️
-        </div>
-
-
-
-        <div class="flower">
-            🌸
-        </div>
-
-
-
-    </div>
 
 
 
 
 
-    <div id="loveText">
+<div id="letter">
 
 
-        I know I haven't gotten u flowers in a while, but u really mean the entire world to me.
+<div class="heartBox">
 
-        <br><br>
+<div class="flower">
+🌸
+</div>
 
-        You're the most precious, beautiful, and stunning woman ever, and I wanna put my all into you and into this relationship.
 
-        <br><br>
+<div class="heart">
+❤️
+</div>
 
-        I'm sorry I took mad time to call, but I really missed you today n I want you to know that I will always always always want you no matter what.
 
-        <br><br>
-        I don't want you to ever feel as if I'll just stop putting in effort to make you feel special, because you really are special to me.
+<div class="flower">
+🌸
+</div>
 
-        <br><br>
-        Nothing beats seeing you in person and giving you flowers, but I hope you like it.
 
-        <br><br>
-        I CANT WAIT TO SEE YOU SOON
-    </div>
+</div>
 
+
+
+
+<div id="message"></div>
+
+
+
+
+<button onclick="goHome()">
+Back ❤️
+</button>
 
 
 
 </div>
+
+
 
 
 
@@ -331,37 +467,149 @@ button {
 <script>
 
 
-
-const box = document.getElementById("gameBox");
-
-const kiss = document.getElementById("kiss");
-
-const slap = document.getElementById("slap");
-
-const love = document.getElementById("love");
+const messages = {
 
 
+sad:`
 
+Hi, my little jaanu ❤️
 
+I know ur upset rn, and u want some space, but i really want u to know that no matter what you are upset I will always always be here for u.
 
-function moveBox(){
+No matter what time of the day, whether im asleep or busy please come to me and cry on my shoulder when you need it.
 
+I will drop everything and anything to comfort you, and I will make sure to keep my mouth shut (ik thas a hard one but just for u) to listen you.
 
-    let maxX = window.innerWidth - 260;
+You mean the entire like the entire world to me, and it kills me every time you are sad, cuz when ur sad I get sad as well.
 
-    let maxY = window.innerHeight - 190;
+Ill never let u sleep angry or sad in ur life.
 
+Ur the best girlfriend in the world, and the bestest best ffriend in thw world.
 
+I'll always be here for u.
 
-    let x = Math.random() * maxX;
-
-    let y = Math.random() * maxY;
+`,
 
 
 
-    box.style.left = x + "px";
 
-    box.style.top = y + "px";
+
+happy:`
+
+HI BABY BABY BABY!!!! ❤️
+
+I assume something good has happened which is why you are opening this and I am so so happy that ur feeling on top of world.
+
+I really do want that for you because you seriously seriously deserve to be the happiest girl in the world.
+
+There's no one I can even imagine thas a nicer, kinder, softer, and more mature person than you are.
+
+LIke you are literally a perfect person.
+
+U are so so so so so so fucking smart n ur work ethic is so impressive (i seen the hours u have on that one app that helps you lock in like wow).
+
+Ur also compassionate and caring for people that are sad n need help.
+
+Ur religious n pray like bro thas crazy.
+
+And ur so fucking hot and gorgeous.
+
+U are the coolest person in the entire world and I want u forever.
+
+`,
+
+
+
+
+
+missing:`
+
+If you are reading this right now, I just want u to know that I miss you too.
+
+There wont ever be a time in my life that I am not yearning for you or wanting you to be right next to me.
+
+(except for rn because im tryna code ts and surprise u obviously ehehe)
+
+I know its hard that sometimes we call alot alot and its rlly rlly hard to end the call n not be with each other.
+
+I reeally wanna be next to u and I just wanna cuddle with u and look down at ur pretty little face and ur big beautiful eyes and kiss ur cheeks until I DIE.
+
+We will be with each other and I cant wait to see you.
+
+I miss u too.
+
+`,
+
+
+
+
+
+sleep:`
+
+If you are reading this right now, I also proly cant sleep but just in case ur awake and im not I just wamnna let u know that i have so so so so so much fun wit u.
+
+Ur the one person I feel so comfortable to talk about anything around.
+
+Ur also a little bit of a fudh and always goofing off.
+
+Whether u speak in hindi or randomly sing hindi songs.
+
+I love it whenever u copy me cuz ur just my little baby that I will always always always cherish.
+
+I cant wait to wake up and see u again fudh fudh.
+
+`,
+
+
+
+
+
+june:`
+
+Sree,
+
+I love you ❤️
+
+`
+
+};
+
+
+
+
+
+function openLetter(type){
+
+
+document.getElementById("music").play();
+
+
+document.getElementById("home").style.display="none";
+
+
+document.getElementById("letter").style.display="flex";
+
+
+
+let box=document.getElementById("message");
+
+
+if(type==="june"){
+
+box.className="juneText";
+
+}
+
+else {
+
+box.className="";
+
+}
+
+
+
+box.innerHTML=messages[type].replace(/\n/g,"<br>");
+
 
 
 }
@@ -370,40 +618,16 @@ function moveBox(){
 
 
 
-
-// red button moves away 😈
-
-slap.onclick = function(){
+function goHome(){
 
 
-    moveBox();
+document.getElementById("home").style.display="block";
 
 
-};
+document.getElementById("letter").style.display="none";
 
 
-
-
-
-
-// green button wins ❤️
-
-kiss.onclick = function(){
-
-
-    box.style.display = "none";
-
-
-    love.style.display = "flex";
-
-
-};
-
-
-
-
-
-moveBox();
+}
 
 
 
@@ -411,8 +635,6 @@ moveBox();
 
 
 
-
 </body>
-
 
 </html>
