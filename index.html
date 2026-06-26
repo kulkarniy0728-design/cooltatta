@@ -1,478 +1,32 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-
-<title>Open When ❤️</title>
-
+<html><head><meta charset="UTF-8"><title>Open When ❤️</title>
 <style>
-
-body {
-margin:0;
-height:100vh;
-overflow:hidden;
-background:#ffd6e7;
-font-family:Arial, sans-serif;
-}
-
-
-body::before {
-
-content:"🌸 🌺 🌸 🌺 🌸 🌺 🌸 🌺 🌸 🌺 🌸 🌺";
-
-position:absolute;
-
-width:100%;
-height:100%;
-
-font-size:45px;
-line-height:120px;
-
-opacity:0.35;
-
-z-index:-1;
-
-}
-
-
-
-
-#home {
-
-width:100%;
-height:100%;
-
-position:relative;
-
-}
-
-
-
-
-
-.envelope {
-
-position:absolute;
-
-width:280px;
-height:220px;
-
-background:#fff0f5;
-
-border-radius:30px;
-
-box-shadow:0 12px 30px #ff7aa2;
-
-display:flex;
-
-justify-content:center;
-align-items:center;
-
-flex-direction:column;
-
-cursor:pointer;
-
-transition:.3s;
-
-}
-
-
-
-.envelope:hover {
-
-transform:scale(1.1);
-
-}
-
-
-
-.emoji {
-
-font-size:100px;
-
-}
-
-
-
-.label {
-
-font-size:22px;
-
-font-weight:bold;
-
-color:#d10045;
-
-text-align:center;
-
-padding:10px;
-
-}
-
-
-
-
-
-#sad {
-
-top:25px;
-left:25px;
-
-}
-
-
-
-#happy {
-
-top:25px;
-right:25px;
-
-}
-
-
-
-#missing {
-
-bottom:25px;
-left:25px;
-
-}
-
-
-
-#sleep {
-
-bottom:25px;
-right:25px;
-
-}
-
-
-
-#june {
-
-top:50%;
-left:50%;
-
-transform:translate(-50%,-50%);
-
-}
-
-
-
-
-
-
-
-#letter {
-
-display:none;
-
-height:100%;
-width:100%;
-
-justify-content:center;
-
-align-items:center;
-
-flex-direction:column;
-
-text-align:center;
-
-padding:30px;
-
-box-sizing:border-box;
-
-}
-
-
-
-
-
-.heartBox {
-
-display:flex;
-
-align-items:center;
-
-gap:25px;
-
-}
-
-
-
-.flower {
-
-font-size:70px;
-
-animation:float 2s infinite;
-
-}
-
-
-
-.heart {
-
-font-size:160px;
-
-animation:pulse 1s infinite;
-
-}
-
-
-
-
-#message {
-
-max-width:900px;
-
-max-height:55vh;
-
-overflow-y:auto;
-
-font-size:22px;
-
-line-height:1.6;
-
-font-weight:bold;
-
-color:#b0003a;
-
-padding:15px;
-
-}
-
-
-
-.juneText {
-
-font-size:55px !important;
-
-}
-
-
-
-
-
-button {
-
-margin-top:25px;
-
-padding:15px 40px;
-
-border:none;
-
-border-radius:30px;
-
-background:#ff477e;
-
-color:white;
-
-font-size:22px;
-
-cursor:pointer;
-
-}
-
-
-
-
-
-@keyframes pulse {
-
-0% {
-transform:scale(1);
-}
-
-50% {
-transform:scale(1.25);
-}
-
-100% {
-transform:scale(1);
-}
-
-}
-
-
-
-@keyframes float {
-
-0% {
-transform:translateY(0);
-}
-
-50% {
-transform:translateY(-15px);
-}
-
-100% {
-transform:translateY(0);
-}
-
-}
-
-
-</style>
-
-</head>
-
-
-
-
-<body>
-
-
-
-<audio id="music" loop>
-
-<source src="tujhmeinrab.mp3" type="audio/mp3">
-
-</audio>
-
-
-
-
-
-
+body{margin:0;height:100vh;overflow:hidden;background:#ffd6e7;font-family:Arial,sans-serif}
+body:before{content:"🌸 🌺 🌸 🌺 🌸 🌺 🌸 🌺 🌸 🌺 🌸 🌺";position:fixed;inset:0;font-size:45px;line-height:120px;opacity:.35;pointer-events:none}
+#home{position:relative;width:100%;height:100%}
+.envelope{position:absolute;width:280px;height:220px;background:#fff0f5;border-radius:30px;box-shadow:0 12px 30px #ff7aa2;display:flex;flex-direction:column;justify-content:center;align-items:center;cursor:pointer;transition:.3s}
+.envelope:hover{transform:scale(1.08)}
+.emoji{font-size:100px}.label{font-size:22px;font-weight:bold;color:#d10045;text-align:center;padding:10px}
+#sad{top:25px;left:25px}#happy{top:25px;right:25px}#missing{bottom:25px;left:25px}#sleep{bottom:25px;right:25px}#june{top:50%;left:50%;transform:translate(-50%,-50%)}
+#letter{display:none;height:100%;flex-direction:column;align-items:center;justify-content:center;padding:30px;box-sizing:border-box;text-align:center}
+.heartBox{display:flex;gap:20px;align-items:center}.flower{font-size:70px;animation:f 2s infinite}.heart{font-size:160px;animation:p 1s infinite}
+#message{max-width:900px;max-height:55vh;overflow:auto;font-size:22px;line-height:1.6;font-weight:bold;color:#b0003a;padding:15px}
+.juneText{font-size:34px!important}
+button{margin-top:25px;padding:15px 40px;border:none;border-radius:30px;background:#ff477e;color:#fff;font-size:22px;cursor:pointer}
+@keyframes p{50%{transform:scale(1.25)}}@keyframes f{50%{transform:translateY(-15px)}}
+</style></head><body>
+<audio id="music" loop><source src="tujhmeinrab.mp3" type="audio/mp3"></audio>
 <div id="home">
-
-
-
-<div class="envelope" onclick="openLetter('sad')" id="sad">
-
-<div class="emoji">💌</div>
-
-<div class="label">
-Open when you're sad
+<div class="envelope" id="sad" onclick="openLetter('sad')"><div class="emoji">💌</div><div class="label">Open when you're sad</div></div>
+<div class="envelope" id="happy" onclick="openLetter('happy')"><div class="emoji">💌</div><div class="label">Open when you're happy</div></div>
+<div class="envelope" id="missing" onclick="openLetter('missing')"><div class="emoji">💌</div><div class="label">Open when you're missing me</div></div>
+<div class="envelope" id="sleep" onclick="openLetter('sleep')"><div class="emoji">💌</div><div class="label">Open when you can't sleep</div></div>
+<div class="envelope" id="june" onclick="openLetter('june')"><div class="emoji">💌</div><div class="label">Open June 27th ❤️</div></div>
 </div>
-
-</div>
-
-
-
-
-
-<div class="envelope" onclick="openLetter('happy')" id="happy">
-
-<div class="emoji">💌</div>
-
-<div class="label">
-Open when you're happy
-</div>
-
-</div>
-
-
-
-
-
-<div class="envelope" onclick="openLetter('missing')" id="missing">
-
-<div class="emoji">💌</div>
-
-<div class="label">
-Open when you're missing me
-</div>
-
-</div>
-
-
-
-
-
-<div class="envelope" onclick="openLetter('sleep')" id="sleep">
-
-<div class="emoji">💌</div>
-
-<div class="label">
-Open when you can't sleep
-</div>
-
-</div>
-
-
-
-
-
-<div class="envelope" onclick="openLetter('june')" id="june">
-
-<div class="emoji">💌</div>
-
-<div class="label">
-Open June 27th ❤️
-</div>
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-<div id="letter">
-
-
-<div class="heartBox">
-
-<div class="flower">
-🌸
-</div>
-
-
-<div class="heart">
-❤️
-</div>
-
-
-<div class="flower">
-🌸
-</div>
-
-
-</div>
-
-
-
-
-<div id="message"></div>
-
-
-
-
-<button onclick="goHome()">
-Back ❤️
-</button>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
+<div id="letter"><div class="heartBox"><div class="flower">🌸</div><div class="heart">❤️</div><div class="flower">🌸</div></div><div id="message"></div><button onclick="goHome()">Back ❤️</button></div>
 <script>
-
-
-const messages = {
-
-
-sad:`
-
-Hi, my little jaanu ❤️
+const messages={
+sad:`Hi, my little jaanu ❤️
 
 I know ur upset rn, and u want some space, but i really want u to know that no matter what you are upset abt I will always always be here for u.
 
@@ -486,17 +40,8 @@ Ill never let u sleep angry or sad in ur life.
 
 Ur the best girlfriend in the world, and the bestest best ffriend in thw world.
 
-I'll always be here for u.
-
-`,
-
-
-
-
-
-happy:`
-
-HI BABY BABY BABY!!!! ❤️
+I'll always be here for u.`,
+happy:`HI BABY BABY BABY!!!! ❤️
 
 I assume something good has happened which is why you are opening this and I am so so happy that ur feeling on top of world.
 
@@ -506,135 +51,57 @@ There's no one I can even imagine thas a nicer, kinder, softer, and more mature 
 
 LIke you are literally a perfect person.
 
-U are so so so so so so fucking smart n ur work ethic is so impressive (i seen the hours u have on that one app that helps you lock in like wow).
+U are so so so so so so fucking smart n ur work ethic is so impressive (i seen the hours u have on that one app that helps you lock in like wow), ur also compassionate and caring for people that are sad n need help, ur religious n pray like bro thas crazy, and ur so fucking hot and gorgeous.
 
-Ur also compassionate and caring for people that are sad n need help.
+u are the coolest person in the entire world and I want u forever.`,
+missing:`If you are reading this right now, I just want u to know that I miss you too.
 
-Ur religious n pray like bro thas crazy.
+There wont ever be a time in my life that I am not yearning for you or wanting you to be right next to me (except for rn because im tryna code ts and surprise u obviously ehehe).
 
-And ur so fucking hot and gorgeous.
-
-U are the coolest person in the entire world and I want u forever.
-
-`,
-
-
-
-
-
-missing:`
-
-If you are reading this right now, I just want u to know that I miss you too.
-
-There wont ever be a time in my life that I am not yearning for you or wanting you to be right next to me.
-
-(except for rn because im tryna code ts and surprise u obviously ehehe)
-
-I know its hard that sometimes we call alot alot and its rlly rlly hard to end the call n not be with each other.
+But yea I know its hard that sometimes we call alot alot and its rlly rlly hard to end the call n not be with each other.
 
 I reeally wanna be next to u and I just wanna cuddle with u and look down at ur pretty little face and ur big beautiful eyes and kiss ur cheeks until I DIE.
 
-We will be with each other and I cant wait to see you.
+We will be with each other and I cant wait to see you whether its on call or in person Im just super duper grateful for it okay.
 
-I miss u too.
+I miss u too.`,
+sleep:`If you are reading this right now, I also proly cant sleep but just in case ur awake and im not I just wamnna let u know that i have so so so so so much fun wit u whether we are calling or together in person.
 
-`,
+Ur the one person I feel so comfortable to talk about anything around and I really love that ur such an understanding person.
 
+Ur also a little bit of a fudh like deadass ur alway7s goofing off or acting like a little goofball whether u speak in hindi or randomly just like sing hindi songs.
 
+I love it whenever u copy me cuz like ur just my littlew baby that I will always always always cherish.
 
+I cant wait to wake up and see u again fudh fudh.`,
+june:`If you’re reading this right now, then i rlly do hope ur reading it IN FRONT OF ME ON JUNE 27TH AND NOT SECRETLY BEHIND MY BACK LIKE A FUDH FUDH.
 
+but anyways i jus want u to know that for these past three months that i have known u ever since i came to u in vantage i knew u would be the one to make the happiest guy in the entire world.
 
-sleep:`
+OKAY MAYBE NOT THE FIRST TIME I CAME UP TO U but the second time i acc talked to u n jus saw how sweet u talk to ppl n how respectful u are n how gorgeous u are I knew that u might acc be the one.
 
-If you are reading this right now, I also proly cant sleep but just in case ur awake and im not I just wamnna let u know that i have so so so so so much fun wit u.
+now im rlly sure of it like genuinely from that day onwards i only liked u more n more n noticed so many more things abt u that make me so attracted to u.
 
-Ur the one person I feel so comfortable to talk about anything around.
+ur such a hard worker, u have so much self respect for urself, u dont take little things to heart cuz u aren’t sensitive, u r so gentle with me whenever im sad, and every single day i see u grow more n more n more beautiful.
 
-Ur also a little bit of a fudh and always goofing off.
+it pains me every time i see u call urself ugly cuz how could u ever diss my girl like that tf😭.
 
-Whether u speak in hindi or randomly sing hindi songs.
+it pains me every time u get upset n dont talk abt it cuz i want to be the one to comfort u in any situation possible.
 
-I love it whenever u copy me cuz ur just my little baby that I will always always always cherish.
+the fact that u dont expect this much effort from me is the reason i do all of this and its because i wanna put the biggest smile on ur face that no one else ever will.
 
-I cant wait to wake up and see u again fudh fudh.
+ever since i cried over u leaving my room the second time we had that sleepover.
 
-`,
+ever since u held my arm as i walked u back to ur room at 2am.
 
+ever since ur eyes lit up when i finally asked u if i could be ur bf.
 
+i knew one thing.
 
+saying that i like u is too little to explain how much u mean to me.
 
-
-june:`
-
-Sree,
-
-I love you ❤️
-
-`
-
+flip the board now ❤️`
 };
-
-
-
-
-
-function openLetter(type){
-
-
-document.getElementById("music").play();
-
-
-document.getElementById("home").style.display="none";
-
-
-document.getElementById("letter").style.display="flex";
-
-
-
-let box=document.getElementById("message");
-
-
-if(type==="june"){
-
-box.className="juneText";
-
-}
-
-else {
-
-box.className="";
-
-}
-
-
-
-box.innerHTML=messages[type].replace(/\n/g,"<br>");
-
-
-
-}
-
-
-
-
-
-function goHome(){
-
-
-document.getElementById("home").style.display="block";
-
-
-document.getElementById("letter").style.display="none";
-
-
-}
-
-
-
-</script>
-
-
-
-</body>
-
-</html>
+function openLetter(t){music.play();home.style.display='none';letter.style.display='flex';let m=document.getElementById('message');m.className=t==='june'?'juneText':'';m.innerHTML=messages[t].replace(/\n/g,'<br><br>')}
+function goHome(){home.style.display='block';letter.style.display='none'}
+</script></body></html>
